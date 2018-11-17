@@ -12,7 +12,7 @@ namespace SEOAnalyzer.Models.Outputs
         string Content { get; set; }
         List<MetaModel> Metas { get; set; }
         List<KeywordModel> Keywords { get; set; }
-        List<string> Links { get; set; }
+        List<LinkModel> Links { get; set; }
 
     }
 }

@@ -69,6 +69,7 @@
     <Compile Include="Enums\WordFilters.cs" />
     <Compile Include="Generals\IKeyword.cs" />
     <Compile Include="Generals\KeywordModel.cs" />
+    <Compile Include="Generals\LinkModel.cs" />
     <Compile Include="Generals\MetaModel.cs" />
     <Compile Include="Inputs\IUserInput.cs" />
     <Compile Include="Inputs\IUserInputModel.cs" />

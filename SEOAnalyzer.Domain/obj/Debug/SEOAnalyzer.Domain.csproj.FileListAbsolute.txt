@@ -19,3 +19,24 @@ C:\Projects\Interview\SEOAnalyzer Solution\SEOAnalyzer.Domain\obj\Debug\SEOAnaly
 C:\Projects\Interview\SEOAnalyzer Solution\SEOAnalyzer.Domain\obj\Debug\SEOAnalyzer.Domain.dll
 C:\Projects\Interview\SEOAnalyzer Solution\SEOAnalyzer.Domain\obj\Debug\SEOAnalyzer.Domain.pdb
 C:\Projects\Interview\SEOAnalyzer Solution\SEOAnalyzer.Domain\obj\Debug\SEOAnalyzer.Domain.csprojAssemblyReference.cache
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\SEOAnalyzer.Domain.dll.config
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\SEOAnalyzer.Domain.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\SEOAnalyzer.Domain.pdb
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.Helpers.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.Mvc.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.Razor.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.WebPages.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.Helpers.xml
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.Mvc.xml
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.Razor.xml
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.WebPages.xml
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\obj\Debug\SEOAnalyzer.Domain.csprojAssemblyReference.cache
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\obj\Debug\SEOAnalyzer.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\obj\Debug\SEOAnalyzer.Domain.csproj.CopyComplete
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\obj\Debug\SEOAnalyzer.Domain.dll
+C:\Projects\Gits\SEOAnalyzer\SEOAnalyzer.Domain\obj\Debug\SEOAnalyzer.Domain.pdb

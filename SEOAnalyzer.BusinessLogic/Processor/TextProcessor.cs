@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SEOAnalyzer.BusinessLogic.Extractor.Interfaces;
 using SEOAnalyzer.Models;
+using SEOAnalyzer.Models.Generals;
 using SEOAnalyzer.Models.Outputs;
 
 namespace SEOAnalyzer.BusinessLogic.Processor
@@ -25,9 +26,7 @@ namespace SEOAnalyzer.BusinessLogic.Processor
             IResultModel returnModel = new ResultModel();
 
             //returnModel
-            List<string> links = _linkExtractor.GetLinkFromContent(model.UserInputModel.TextContent);
-
-            List<string> test = new List<string>();
+            List<LinkModel> links = _linkExtractor.GetLinkFromContent(model.UserInputModel.TextContent);
 
             return returnModel;
         }

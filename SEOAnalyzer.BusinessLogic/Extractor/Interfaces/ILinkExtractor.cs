@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEOAnalyzer.Models.Generals;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace SEOAnalyzer.BusinessLogic.Extractor.Interfaces
     public interface ILinkExtractor : IExtractor
     {
         string UrlPath { get; set; }
-        List<string> GetLinkFromContent(string content);
+        List<LinkModel> GetLinkFromContent(string content);
+        List<LinkModel> GetLinkFromUrl(string url);
     }
 }

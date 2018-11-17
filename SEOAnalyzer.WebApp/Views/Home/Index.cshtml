@@ -29,10 +29,10 @@
             @Html.TextBoxFor(model => model.UserInputModel.UrlContent, new { @class = "form-control", @style = "width:100% !important;", @placeholder = "Enter the URL for SEO analysis..." })
         </div>
         <div class="col-11">
-            @Html.TextAreaFor(model => model.UserInputModel.TextContent, new { @class = "form-control", @style = "width:100% !important;", @placeholder = "Enter the Content of the web page" })
+            @Html.TextAreaFor(model => model.UserInputModel.TextContent, new { @class = "form-control", @style = "width:100% !important; height: 350px;", @placeholder = "Enter the Content of the web page" })
         </div>
         <div class="col-1" style="text-align:right;">
-            <input type="submit" value="Analyze" class="btn btn-warning" />
+            <input type="submit" value="Analyze" class="btn btn-warning" style=" vertical-align:top;" />
         </div>
     </div>
 

@@ -55,8 +55,8 @@ namespace SEOAnalyzer.WebApp.Controllers
                     } else
                     {
                         // Call a Url Processor
-                        gProcessor = new UrlProcessor();
-
+                        gProcessor = new UrlProcessor(new LinkExtractor());
+                        model.ResultModel = gProcessor.ProcessInput(model);
                     }
                     
 
