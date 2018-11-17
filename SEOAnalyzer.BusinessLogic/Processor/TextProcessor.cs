@@ -27,6 +27,8 @@ namespace SEOAnalyzer.BusinessLogic.Processor
             //returnModel
             List<string> links = _linkExtractor.GetLinkFromContent(model.UserInputModel.TextContent);
 
+            List<string> test = new List<string>();
+
             return returnModel;
         }
     }
