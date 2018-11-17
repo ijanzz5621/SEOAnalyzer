@@ -1,0 +1,70 @@
+﻿@model SEOAnalyzer.Models.ISEOViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<form method="post">
+   
+    <div class="row">
+        <div class="col-12">
+            <div class="form-check-inline">
+
+                @for (var i = 0; i < Model.UserInputModel.AnalysisOptions.Count; i++)
+                {
+                    <label style="margin-right:15px;">
+                        @Html.CheckBoxFor(model => model.UserInputModel.AnalysisOptions[i].Selected)
+
+                        @Html.DisplayFor(model => model.UserInputModel.AnalysisOptions[i].Text)
+
+                        @Html.HiddenFor(model => model.UserInputModel.AnalysisOptions[i].Value)
+                        @Html.HiddenFor(model => model.UserInputModel.AnalysisOptions[i].Text)
+                        @*@Html.HiddenFor(model => model.UserInputModel.AnalysisOptions[i].Group)*@
+                    </label>
+                }
+            </div>
+        </div>
+
+        <div class="col-11">
+            @Html.TextBoxFor(model => model.UserInputModel.UrlContent, new { @class = "form-control", @style = "width:100% !important;", @placeholder = "Enter the URL for SEO analysis..." })
+        </div>
+        <div class="col-11">
+            @Html.TextAreaFor(model => model.UserInputModel.TextContent, new { @class = "form-control", @style = "width:100% !important;", @placeholder = "Enter the Content of the web page" })
+        </div>
+        <div class="col-1" style="text-align:right;">
+            <input type="submit" value="Analyze" class="btn btn-warning" />
+        </div>
+    </div>
+
+</form>
+
+@{ 
+    if (Model != null)
+    {
+        <div class="row">
+
+            <div class="col-12" style="padding-right:0px;">
+                <hr/>
+            </div>
+
+            <div class="col-12">
+                <span>@Model.UserInputModel.UrlContent</span>
+            </div>
+
+        </div>
+        
+    }
+
+}
+
+@section scripts {
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //alert("Document loaded!");
+        });
+
+    </script>
+
+}
