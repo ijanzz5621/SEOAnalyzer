@@ -20,19 +20,22 @@ namespace SEOAnalyzer.BusinessLogic.Extractor
             HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(Content);
 
-            //var list = doc.DocumentNode.SelectNodes("//meta[@name='keywords']");
-            var list = doc.DocumentNode.SelectNodes("//meta");
-            int rowCount = 1;
-            foreach (var node in list)
+            var list = doc.DocumentNode.SelectNodes("//meta[@name='keywords']");
+            //var list = doc.DocumentNode.SelectNodes("//meta");
+            //int rowCount = 1;
+            if (list != null)
             {
-                string content = node.GetAttributeValue("content", "");
-                result.Add(new MetaModel
+                foreach (var node in list)
                 {
-                    Name = content
-                    , Count = rowCount
-                });
+                    string content = node.GetAttributeValue("content", "");
+                    result.Add(new MetaModel
+                    {
+                        Name = content.Replace(",", " , ") // To add space between commas so that it can wrap in the UI
+                                                           //, Count = rowCount
+                    });
 
-                rowCount++;
+                    //rowCount++;
+                }
             }
 
             return result;

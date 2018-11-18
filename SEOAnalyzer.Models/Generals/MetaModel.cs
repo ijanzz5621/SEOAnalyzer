@@ -9,6 +9,6 @@ namespace SEOAnalyzer.Models.Generals
     public class MetaModel : IKeyword
     {
         public string Name { get; set; }
-        public int Count { get; set; }
+        public int WordCount { get; set; }
     }
 }

@@ -46,10 +46,8 @@ namespace SEOAnalyzer.WebApp.Controllers
                     var directTextOption = model.UserInputModel.AnalysisOptions.Where(x => x.Value == "DirectText").FirstOrDefault();
                     if (directTextOption != null && directTextOption.Selected == true)
                     {
-                        //model.UserInputModel.InputType = "DirectType";
-
                         // Call a Text Processor
-                        gProcessor = new TextProcessor(new LinkExtractor());
+                        gProcessor = new TextProcessor(new LinkExtractor(), new HtmlExtractor(), new MetaExtractor());
                         model.ResultModel = await gProcessor.ProcessInput(model);
                         //model.ResultModel = gProcessor 
 

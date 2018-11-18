@@ -52,3 +52,12 @@
         }
     }
 }
+
+function validateURI(_url) {
+    var pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+    if (pattern.test(_url)) {
+        return true;
+    }
+    return false;
+
+}

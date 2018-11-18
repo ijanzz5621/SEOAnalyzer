@@ -9,6 +9,6 @@ namespace SEOAnalyzer.Models.Generals
     interface IKeyword
     {
         string Name { get; set; }
-        int Count { get; set; }
+        int WordCount { get; set; }
     }
 }

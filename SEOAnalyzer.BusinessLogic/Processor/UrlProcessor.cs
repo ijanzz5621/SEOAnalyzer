@@ -40,6 +40,9 @@ namespace SEOAnalyzer.BusinessLogic.Processor
             _metaExtractor.Content = returnModel.Content;
             returnModel.Metas = _metaExtractor.GetMeta();
 
+            // 4. Get words and its count
+            returnModel.Keywords = _htmlExtractor.GetWordAndCount(model, _metaExtractor.Content);
+
             return returnModel;
         }
     }

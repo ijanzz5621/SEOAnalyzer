@@ -9,6 +9,6 @@ namespace SEOAnalyzer.Models.Generals
     public class KeywordModel : IKeyword
     {
         public string Name { get; set; }
-        public int Count { get; set; }
+        public int WordCount { get; set; }
     }
 }
