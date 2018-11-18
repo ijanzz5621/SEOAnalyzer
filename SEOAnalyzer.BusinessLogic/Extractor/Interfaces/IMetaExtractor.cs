@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEOAnalyzer.Models.Generals;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,8 @@ namespace SEOAnalyzer.BusinessLogic.Extractor.Interfaces
 {
     public interface IMetaExtractor : IExtractor
     {
+        string Content { get; set; }
+
+        List<MetaModel> GetMeta();
     }
 }

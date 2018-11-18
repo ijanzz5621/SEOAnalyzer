@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 using SEOAnalyzer.BusinessLogic.Processor;
 using SEOAnalyzer.BusinessLogic.Extractor;
+using System.Threading.Tasks;
 
 namespace SEOAnalyzer.WebApp.Controllers
 {
@@ -22,7 +23,7 @@ namespace SEOAnalyzer.WebApp.Controllers
         {
             ISEOViewModel model = new SEOViewModel(new UserInputModel(), new ResultModel());
             model.UserInputModel = new UserInputModel(new AnalysisOptions());
-            model.ResultModel = new ResultModel();
+            //model.ResultModel = new ResultModel();
             return View(model);
         }
 
@@ -34,7 +35,7 @@ namespace SEOAnalyzer.WebApp.Controllers
         /// The result of the text or URL from user for SEO
         /// </returns>
         [HttpPost]
-        public ActionResult Index(SEOViewModel model)
+        public async Task<ActionResult> Index(SEOViewModel model)
         {
             // Call a business logic to check and process the input
             try
@@ -49,14 +50,14 @@ namespace SEOAnalyzer.WebApp.Controllers
 
                         // Call a Text Processor
                         gProcessor = new TextProcessor(new LinkExtractor());
-                        gProcessor.ProcessInput(model);
+                        model.ResultModel = await gProcessor.ProcessInput(model);
                         //model.ResultModel = gProcessor 
 
                     } else
                     {
                         // Call a Url Processor
-                        gProcessor = new UrlProcessor(new LinkExtractor());
-                        model.ResultModel = gProcessor.ProcessInput(model);
+                        gProcessor = new UrlProcessor(new LinkExtractor(), new HtmlExtractor(), new MetaExtractor());
+                        model.ResultModel = await gProcessor.ProcessInput(model);
                     }
                     
 

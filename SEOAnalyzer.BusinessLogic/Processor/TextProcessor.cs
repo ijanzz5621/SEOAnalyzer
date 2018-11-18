@@ -21,12 +21,12 @@ namespace SEOAnalyzer.BusinessLogic.Processor
             _linkExtractor = linkExtractor;
         }
 
-        public IResultModel ProcessInput(ISEOViewModel model)
+        public async Task<IResultModel> ProcessInput(ISEOViewModel model)
         {
             IResultModel returnModel = new ResultModel();
 
             //returnModel
-            List<LinkModel> links = _linkExtractor.GetLinkFromContent(model.UserInputModel.TextContent);
+            List<LinkModel> links = await Task.Run(() => _linkExtractor.GetLinkFromContent(model.UserInputModel.TextContent));
 
             return returnModel;
         }

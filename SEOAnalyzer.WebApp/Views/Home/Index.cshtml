@@ -1,4 +1,5 @@
-﻿@model SEOAnalyzer.Models.ISEOViewModel
+﻿@using SEOAnalyzer.Models.Generals
+@model SEOAnalyzer.Models.ISEOViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -19,7 +20,6 @@
 
                         @Html.HiddenFor(model => model.UserInputModel.AnalysisOptions[i].Value)
                         @Html.HiddenFor(model => model.UserInputModel.AnalysisOptions[i].Text)
-                        @*@Html.HiddenFor(model => model.UserInputModel.AnalysisOptions[i].Group)*@
                     </label>
                 }
             </div>
@@ -39,20 +39,80 @@
 </form>
 
 @{ 
-    if (Model != null)
+
+    // To show the output result of the analysis
+
+    if (Model != null && Model.ResultModel != null)
     {
-        <div class="row">
+<div class="row">
 
-            <div class="col-12" style="padding-right:0px;">
-                <hr/>
-            </div>
+    <div class="col-12" style="padding-right:0px;">
+        <hr />
+    </div>
 
-            <div class="col-12">
-                <span>@Model.UserInputModel.UrlContent</span>
-            </div>
+    <div class="col-12">
+        <h5>Result:</h5>
+    </div>
 
-        </div>
-        
+    <div class="col-12">
+        <span>HTML Meta keywords</span>
+    </div>
+
+    <div class="col-12">
+        <table id="tableMeta" class="table table-bordered">
+            <thead class="thead-dark bg-dark" style="color:#f1f1f1">
+                <tr>
+                    <th style="cursor:pointer" onclick="sortTable('tableMeta', 0)">Meta Name</th>
+                    <th style="cursor:pointer" onclick="sortTable('tableMeta', 1)">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (MetaModel item in Model.ResultModel.Metas)
+                    {
+                        <tr><td>@item.Name</td><td>@item.Count</td></tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-12" style="padding-right:0px;">
+        <hr />
+    </div>
+
+    <div class="col-12">
+        <span>Links Available</span>
+    </div>
+
+    <div class="col-12">
+        <table id="tableLink" class="table table-bordered">
+            <thead class="thead-dark bg-dark" style="color:#f1f1f1">
+                <tr>
+                    <th style="cursor:pointer" onclick="sortTable('tableLink', 0)">Name</th>
+                    <th style="cursor:pointer" onclick="sortTable('tableLink', 1)">Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (LinkModel item in Model.ResultModel.Links)
+                    {
+                        <tr><td>@item.Name</td><td>@item.Path</td></tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+        if (Model.ResultModel != null && Model.ResultModel.Content != null)
+        {
+            <input type="hidden" id="hidContentOutput" value="@Model.ResultModel.Content" />
+        }
+
+
+
     }
 
 }
@@ -62,7 +122,9 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            //alert("Document loaded!");
+            if (($('#hidContentOutput') !== null || $('#hidContentOutput') != undefined) && $('#hidContentOutput').val() != undefined && $('#hidContentOutput').val().length > 0) {
+                $('#UserInputModel_TextContent').val($('#hidContentOutput').val());
+            }
         });
 
     </script>

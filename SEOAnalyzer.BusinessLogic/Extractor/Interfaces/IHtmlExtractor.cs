@@ -8,5 +8,6 @@ namespace SEOAnalyzer.BusinessLogic.Extractor.Interfaces
 {
     public interface IHtmlExtractor : IExtractor
     {
+        Task<string> GetContentFromUrl(string url);
     }
 }

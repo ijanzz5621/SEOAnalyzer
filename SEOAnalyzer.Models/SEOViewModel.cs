@@ -23,7 +23,7 @@ namespace SEOAnalyzer.Models
         public SEOViewModel(IUserInputModel _userInputModels, IResultModel _resultModel)
         {
             UserInputModel = _userInputModels;
-            ResultModel = _resultModel;
+            //ResultModel = _resultModel;
         }
     }
 }

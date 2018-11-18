@@ -13,14 +13,19 @@ namespace SEOAnalyzer.BusinessLogic.Processor
     public class UrlProcessor : IProcessor
     {
         ILinkExtractor _linkExtractor;
+        IHtmlExtractor _htmlExtractor;
+        IMetaExtractor _metaExtractor;
+
         public string InputText { get; set; }
 
-        public UrlProcessor(ILinkExtractor linkExtractor)
+        public UrlProcessor(ILinkExtractor linkExtractor, IHtmlExtractor htmlExtractor, IMetaExtractor metaExtractor)
         {
             _linkExtractor = linkExtractor;
+            _htmlExtractor = htmlExtractor;
+            _metaExtractor = metaExtractor;
         }
 
-        public IResultModel ProcessInput(ISEOViewModel model)
+        public async Task<IResultModel> ProcessInput(ISEOViewModel model)
         {
             IResultModel returnModel = new ResultModel();
 
@@ -28,7 +33,12 @@ namespace SEOAnalyzer.BusinessLogic.Processor
             List<LinkModel> links = _linkExtractor.GetLinkFromUrl(model.UserInputModel.UrlContent);
             returnModel.Links = links;
 
-            // 2. TODO
+            // 2. Extract HTML
+            returnModel.Content = await _htmlExtractor.GetContentFromUrl(model.UserInputModel.UrlContent);
+
+            // 3. Get the META keywords
+            _metaExtractor.Content = returnModel.Content;
+            returnModel.Metas = _metaExtractor.GetMeta();
 
             return returnModel;
         }

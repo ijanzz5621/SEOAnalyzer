@@ -12,6 +12,6 @@ namespace SEOAnalyzer.BusinessLogic.Processor
     {
         string InputText { get; set; }
 
-        IResultModel ProcessInput(ISEOViewModel model);
+        Task<IResultModel> ProcessInput(ISEOViewModel model);
     }
 }
